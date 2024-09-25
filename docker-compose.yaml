@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  server:
+   build: .
+   ports:
+    - "4500:4500"
+
+
+  mongodb:
+    container_name: techyjauntcars-db
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
